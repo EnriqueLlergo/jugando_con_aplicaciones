@@ -11,8 +11,9 @@ import android.widget.TextView;
 
 public class saludoActivity extends AppCompatActivity {
     public static final String NUMERO = "NUMERO";
+    public static final String COLOR = "Verde";
     TextView saludo;
-    EditText editTextNumero;
+    EditText editTextNumero, color;
     Button buttonvolver;
 
     @Override
@@ -23,6 +24,7 @@ public class saludoActivity extends AppCompatActivity {
         saludo = findViewById(R.id.textView);
         editTextNumero = findViewById(R.id.editTextNumber);
         buttonvolver = findViewById(R.id.buttonvolver);
+
         //para comprobar si hay intent
         Intent intent = getIntent();
         //NOMBRE, constante anterior
@@ -33,11 +35,15 @@ public class saludoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String numero=editTextNumero.getText().toString();
+
                 //se pne vacio este intent, porque con el finish ya vuelve hacia atras
                 Intent intento = new Intent();
+
                 intento.putExtra(NUMERO, numero);
+
                 //RESULT_OK, ya esta creada en el android
                 setResult(RESULT_OK, intento);
+
                 finish();
             }
         });

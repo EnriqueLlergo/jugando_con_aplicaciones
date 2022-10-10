@@ -13,8 +13,9 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String NOMBRE = "NOMBRE";
     private static final int CODIGO_IDENTIFICACION_SALUDO = 10;
+    private static final String COLOR = "Verde";
     Button lanzar;
-    EditText editTextnombre;
+    EditText editTextnombre, editTextcolor;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -23,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode==CODIGO_IDENTIFICACION_SALUDO && resultCode==RESULT_OK)
         {
             String numero=data.getStringExtra(saludoActivity.NUMERO);
+            String color=data.getStringExtra(saludoActivity.COLOR);
             editTextnombre.setText(editTextnombre.getText()+" "+numero);
+            editTextcolor.setText(editTextcolor.getText()+" "+color);
         }
     }
 
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         lanzar=findViewById(R.id.buttonLanzar);
         editTextnombre=findViewById((R.id.editTextTextnombre));
 
+
         lanzar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 //Clave y valor
                 //Nombre constante publica
                 intento.putExtra(NOMBRE, editTextnombre.getText().toString());
+
                 //abre la otra ventana
                 //startActivity(intento);
                 startActivityForResult(intento, CODIGO_IDENTIFICACION_SALUDO);

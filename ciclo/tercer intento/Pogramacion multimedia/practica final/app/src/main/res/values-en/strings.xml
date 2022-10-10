@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">practicafinal</string>
+    <string name="text_number1">Nº of friends</string>>
+    <string name="text_number2">Nº of cups</string>
+    <string name="boton">The party begins</string>
+    <string name="textView">Total cups</string>
+    <string name="comentarioinicial">The number of drinks must be greater than or equal to the number of people</string>
+    <string name="amigo">Friend</string>
+    <string name="totales">Total cup:</string>
+</resources>
